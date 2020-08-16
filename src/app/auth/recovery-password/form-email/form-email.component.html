@@ -1,0 +1,19 @@
+<div class="login-form">
+    <mat-card>
+        <mat-card-content>
+            <h1><img src="assets/images/resources/logo_orange.png"/></h1>
+            <h5 class="text-login">Recuperar contraseña</h5>
+            <h6 class="parrafo-login">Para recuperar tu contraseña solo propociona el E-mail con el que te registraste, en un par de minutos recibiras un correo con tu contraseña</h6>
+            <mat-form-field appearance="outline" class="full-width-input">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="">
+                <!-- <mat-error *ngIf="isValidField('username')">
+                    {{getErrorMessage('username')}}
+                </mat-error> -->
+            </mat-form-field>
+            <button routerLink="/recovery/email" mat-raised-button>ENVIAR</button>
+            <p class="link-recovery"><a routerLink="/login">Regresar</a></p>
+        </mat-card-content>
+    </mat-card>
+</div>
+

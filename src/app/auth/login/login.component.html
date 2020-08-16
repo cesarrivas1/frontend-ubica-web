@@ -1,0 +1,34 @@
+<div class="container-auth">
+    <div class="container">
+        <div class="login-form">
+            <mat-card>
+                <mat-card-content>
+                    <h1><img src="assets/images/resources/logo_orange.png"/></h1>
+                    <h5 class="text-login">Login</h5>
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput placeholder="">
+                        <!-- <mat-error *ngIf="isValidField('username')">
+                            {{getErrorMessage('username')}}
+                        </mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Contraseña</mat-label>
+                        <input
+                            [type]="hide ? 'password' : 'text'" 
+                            matInput 
+                        >
+                        <button class="button-icon" mat-icon-button matSuffix (click)="hide = !hide">
+                            <mat-icon matSuffix>{{ hide ? "visibility_off" : "visibility"}}</mat-icon>
+                        </button>
+                        <!-- <mat-error *ngIf="isValidField('password')">
+                            {{getErrorMessage('password')}}
+                        </mat-error> -->
+                    </mat-form-field>
+                    <button class="button" type="submit" mat-raised-button>INGRESAR</button>
+                    <p class="link-recovery"><a routerLink="/recovery">Olvido contraseña</a></p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mat-icon{
+    font-family: 'Material Icons'!important;
+    color:#EA6926;
+  }
+
+  .nav-bar-container{
+    height:100px!important;
+    widows: 100%!important;
+    position:absolute!important;
+    top:0!important;
+    background:#fff!important;
+  }
+
+.container-dashboard{
+    box-sizing: content-box;
+    background: #fff;
+    background-image: url(/assets/images/resources/bg-dashboard.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    // background-position: center;
+    height: 100vh;
+}

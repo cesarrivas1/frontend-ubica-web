@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    background-attachment: #E6E6E6;
+
+}
+
+body{
+    background-attachment: #E6E6E6;
+}
+
+.nav,
+.header,
+.section1,
+.section2,
+.section3,
+.footer
+{
+    min-height: 100px;
+    background-color: orangered;
+}
+.container{
+    width:90%;
+    margin:0px auto;
+    max-width: 1140px;
+}
+.grid-container{
+    display:grid;
+    grid-gap:20px;
+    height: 100vh;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(6,1fr);
+    grid-template-areas: "header  header   header"
+                         "cards   cards   cards"
+                         "cards2  cards2  cards2"
+                         "banner1 banner1 banner1"
+                         "banner2 banner2 banner2"
+                         "footer  footer  footer";
+}
+
+.grid-container>.header{
+    grid-area:header;
+    width: 100%;
+    height: 273px;
+    background-image: url(/assets/images/banner.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.grid-container>.section_card_one{
+    grid-area:cards;
+}
+
+.grid-container>.section_card_two{
+    grid-area:cards2;
+}
+
+.grid-container>.section1{
+    grid-area:banner1;
+}
+
+.grid-container>.section2{
+    grid-area:banner2;
+}
+
+.grid-container>.footer{
+    grid-area:footer;
+}
+
+.header{
+    margin-bottom: 0px;
+}
+
+.grid-container .section_card_one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 404px;
+    padding:20px;
+
+
+    .card_1{
+        width:27%;
+        background-image: url(/assets/images/DescargalaAPP.png);
+        // background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .card_2{
+        width:27%;
+
+        background-image: url(/assets/images/AfiliaServicio.png);
+        // background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .card_3{
+        width:27%;
+        background-image: url(/assets/images/AfiliateComercio.png);
+        // background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+
+.grid-container .section_card_two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 200px;
+    padding:20px;
+
+
+    .card_4{
+        width:50%;
+        background-image: url(/assets/images/BotonUbicaVerifique.png);
+        // background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .card_5{
+        width:50%;
+
+        background-image: url(/assets/images/BotonUbicaPagoporReferidos.png);
+        // background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+}
