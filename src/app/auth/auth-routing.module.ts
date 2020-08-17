@@ -8,19 +8,19 @@ import { ResetPasswordComponent } from './reset-password/form-reset.component';
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'recovery',
-    component: RecoveryPasswordComponent,
+    component: RecoveryPasswordComponent
   },
   {
     path: 'recovery/:email',
-    component: RecoveryPasswordComponent,
+    component: RecoveryPasswordComponent
   },
   {
     path: 'reset',
-    component: ResetPasswordComponent,
+    component: ResetPasswordComponent
   }
 ]
 @NgModule({

@@ -1,7 +1,16 @@
-<div class="container-dashboard container-flex">
+<section>
+    <ab-header-dashboard></ab-header-dashboard>
     <ab-nav-dashboard></ab-nav-dashboard>
     <div class="container">
-
-    </div>
-</div>
+        <ng-container *ngIf="home">
+            <div class="container-dashboard">
+                <div class="container-text">
+                    <h5 class="text-welcome">Bienvenido!</h5>
+                    <h5 class="instruccions-welcome">Por favor selecciona una de las opciones del menú superior para comenzar</h5>    
+                </div>
+            </div>
+        </ng-container>
+        <router-outlet></router-outlet>
+    </div>  
+</section>
 
