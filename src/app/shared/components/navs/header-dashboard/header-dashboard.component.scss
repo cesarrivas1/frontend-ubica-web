@@ -13,6 +13,7 @@ header {
 
   .container-links {
     height: 50px;
+
         ul {
             height: 50px;
             display: flex;
@@ -64,7 +65,7 @@ header {
         margin-bottom:none;
         height: 50px;
         line-height: 50px;
-        margin-left:5px;
+        margin-left:10px;
         
         b{
             margin-bottom:0px!important;
@@ -80,8 +81,8 @@ header {
 }
 
 .img-logo {
-  width: 40px!important;
-  height:40px!important;
+  width: 50px!important;
+  height:auto!important;
 }
 
 

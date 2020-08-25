@@ -1,0 +1,35 @@
+.form-container{
+    width:100%;
+    display:grid;
+    grid-gap:1rem;
+    padding:15px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "picture form space_blank";
+    max-height:560px;
+
+}
+
+.form-container .section-image{
+    grid-area: picture;
+}
+
+.form-container .section-inputs{
+    grid-area: form;
+}
+
+
+.form-container .form-group{
+    grid-area: space_blank;
+}
+
+
+.select-css-simple {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url(/assets/images/resources/back.png)!important;
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }

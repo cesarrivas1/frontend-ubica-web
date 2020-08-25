@@ -9,6 +9,7 @@ import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { AfiliadosComponent } from './afiliados/afiliados.component';
+import { FormRegisterComponent } from './solicitudes/form-register/form-register.component';
 
 
 
@@ -18,7 +19,8 @@ import { AfiliadosComponent } from './afiliados/afiliados.component';
     SolicitudesComponent,
     UsuariosComponent,
     PagosComponent,
-    AfiliadosComponent],
+    AfiliadosComponent,
+    FormRegisterComponent],
     
   imports: [
     CommonModule,
