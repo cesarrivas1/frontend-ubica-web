@@ -1,0 +1,90 @@
+<div class="container-auth">
+    <div class="container">
+        <div class="login-form">
+            <mat-card>
+                <mat-card-content>
+                    <h1><img src="assets/images/resources/logo_naranga.png"/></h1>
+                    <h5 class="text-login">Registrate</h5>
+
+                    <img class="image-user" src="assets/images/resources/user_1.png">
+                    <!-- <div class="form-group row my-1 mb-2">
+                        <img-upload></img-upload>
+                    </div> -->
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput placeholder="">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Apellido</mat-label>
+                        <input type='text' matInput >
+                        <button class="button-icon" mat-icon-button matSuffix>
+                            <mat-icon matSuffix></mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Email</mat-label>
+                        <input type='email' matInput >
+                        <button class="button-icon" mat-icon-button matSuffix>
+                            <mat-icon matSuffix></mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <div class="form-group row my-1 mb-2">
+                        <div class="col-sm-4 ajust">
+                          <select class="select select-css-simple">
+                            <option>DD</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-4 ajust">
+                            <select class="select select-css-simple">
+                              <option>MM</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4 ajust">
+                            <select class="select select-css-simple">
+                              <option>YYYY</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Numero de Telefono</mat-label>
+                        <input type='email' matInput >
+                        <button class="button-icon" mat-icon-button matSuffix>
+                            <mat-icon matSuffix></mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <div class="form-control-genero">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="customRadio1">M</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">F</label>
+                        </div>
+                    </div>
+
+                    <mat-form-field appearance="outline" class="full-width-input">
+                        <mat-label>Selecciona ubicacion</mat-label>
+                        <input type='email' matInput >
+                        <button class="button-icon" mat-icon-button matSuffix>
+                            <mat-icon matSuffix></mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <div class="form-group row my-1 mb-2">                        
+                        <div *ngIf="apiLoaded | async">
+                            <google-map width="310px" height="200px"></google-map>
+                        </div>
+                    </div>
+
+                    <button class="button" routerLink="/dashboard/home" mat-raised-button>ENVIAR</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+

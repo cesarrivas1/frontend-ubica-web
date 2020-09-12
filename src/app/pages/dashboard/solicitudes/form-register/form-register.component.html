@@ -1,10 +1,30 @@
 <section class="form-container">
-    <div class="section-image"></div>
+    <div class="section-image">
+        <div class="container_image">
+            <img class="image_profile" src="assets/images/resources/user_profile.png">
+            <p class="name_subscritor">Cesar Rivas</p>
+            <p class="num_subscriptor">ID de afiliado <span class="id_subscriptor">VE000000</span></p>
+            <button class="btn-accept">ACEPTAR</button>
+            <button class="btn-delete">ELIMINAR</button>
+        </div>
+    </div>
     <div class="section-inputs">
-        <form>
+        <form class="form_information">
             <div class="form-group">
-              <label for="exampleFormControlInput1">Datos personales</label>
+              <label class="title-1">Datos personales</label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="telefono">
+                
+                <div class="form-control-genero">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+                        <label class="custom-control-label" for="customRadio1">M</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2">F</label>
+                    </div>
+                </div>
+
             </div>
 
             <div class="form-group">
@@ -12,26 +32,26 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlInput1">Direccion</label>
-                <select class="form-control select-css">
+                <label class="title-1">Direccion</label>
+                <select class="form-control select-css-simple">
                     <option>Venezuela</option>
                 </select>            
             </div>
 
             <div class="form-group">
-                <select class="form-control select-css">
+                <select class="form-control select-css-simple">
                     <option>Bolivar</option>
                 </select>            
             </div>
 
             <div class="form-group">
-                <select class="form-control select-css">
+                <select class="form-control select-css-simple">
                     <option>Ciudad Guayana</option>
                 </select>            
             </div>
 
             <div class="form-group">
-                <select class="form-control select-css">
+                <select class="form-control select-css-simple">
                     <option>Caroni</option>
                 </select>            
             </div>

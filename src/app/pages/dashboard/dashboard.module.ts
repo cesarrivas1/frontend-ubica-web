@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 
+
 import { DashboardComponent } from './home/dashboard.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -20,8 +21,8 @@ import { FormRegisterComponent } from './solicitudes/form-register/form-register
     UsuariosComponent,
     PagosComponent,
     AfiliadosComponent,
-    FormRegisterComponent],
-    
+    FormRegisterComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

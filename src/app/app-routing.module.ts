@@ -11,21 +11,18 @@ import { authContent } from './shared/routes/auth-routes';
 // Components
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './pages/dashboard/home/dashboard.component';
-import { SolicitudesComponent } from './pages/dashboard/solicitudes/solicitudes.component';
-import { UsuariosComponent } from './pages/dashboard/usuarios/usuarios.component';
-import { PagosComponent } from './pages/dashboard/pagos/pagos.component';
-import { AfiliadosComponent } from './pages/dashboard/afiliados/afiliados.component';
+import { LayoutComponent } from './shared/components/layouts/layout/layout.component';
 
 // {
 const routes: Routes = [
     {
       path: '',
-      redirectTo: '/login',
+      redirectTo: '/home',
       pathMatch: 'full',
     },
     {
-      path: '',
-      component: HomeComponent,
+      path: 'home',
+      component: LayoutComponent,
       children: content,
     },
     {

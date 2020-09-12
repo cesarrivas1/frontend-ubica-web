@@ -32,4 +32,114 @@
     background-repeat: no-repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
-  }
+}
+
+.container_image{
+    padding:40px 70px;
+    
+    .image_profile{
+        width:160px;
+        height: 160px;
+        margin-bottom: 30px;
+    }
+
+    .name_subscritor{
+        color:#000;
+        letter-spacing: 0px;
+        font-size:16px;
+        font-family: 'Mulish', sans-serif;
+        margin-bottom:5px;
+    }
+
+    .num_subscriptor{
+        letter-spacing: 0px;
+        color: #9B9B9B;
+        opacity: 1;
+        font-size: 13px;
+
+        .id_subscriptor{
+            color:#000;
+        }
+    }
+
+    .btn-delete{
+        width:90%;
+        display: block;
+        height:42px;
+        text-align: center;
+        font: normal normal 600 14px/19px Montserrat;
+        letter-spacing: 0px;
+        border:1px solid #EA6926;
+        color: #EA6926;
+        text-transform: uppercase;
+        opacity: 1;
+        background:#fff;
+        border-radius:3px;
+        margin-bottom:8px;
+        transition: 3ms all;
+    }
+
+    .btn-delete:hover{
+        border:1px solid #EA6926;
+        color: #fff;
+        opacity: 1;
+        background:#EA6926;
+        cursor:pointer;
+    }
+
+    .btn-accept{
+        width:90%;
+        display: block;
+        height:42px;
+        text-align: center;
+        font: normal normal 600 14px/19px Montserrat;
+        letter-spacing: 0px;
+        border:1px solid #EA6926;
+        color: #fff;
+        text-transform: uppercase;
+        opacity: 1;
+        background:#EA6926;
+        border-radius:3px;
+        margin-bottom:8px;
+        transition: 3ms all;
+    }
+
+    .btn-accept:hover{
+        border:1px solid #EA6926;
+        color: #EA6926;
+        opacity: 1;
+        background:#fff;
+        cursor:pointer;
+    }
+}
+
+.form_information{
+    padding-top:40px;
+
+    .form-control{
+        border: 1px solid #BEBDBD;
+        border-radius: 3px;
+        opacity: 1;
+        height: 35px;
+    }
+
+    .title-1{
+        font-size:14px;
+        letter-spacing: 0px;
+        color: #EA6926;
+        opacity: 1;
+    }
+
+    .form-control-genero{
+        display:flex;
+        flex-direction:row;
+    }
+
+    .custom-control-label {
+        margin-right: 20px;
+        font-size: 13px;
+        letter-spacing: 0px;
+        color: #EA6926;
+        opacity: 1;
+    }
+}

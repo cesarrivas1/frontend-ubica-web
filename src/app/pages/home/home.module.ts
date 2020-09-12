@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { SharedModule } from '../../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
+
 import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+import { HomeHeaderComponent } from './home-header/home-header.component';
+import { SectionOneComponent } from './section-one/section-one.component';
+import { SectionTwoComponent } from './section-two/section-two.component';
+import { SectionTreeComponent } from './section-tree/section-tree.component';
+import { SectionFourComponent } from './section-four/section-four.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent],
+  declarations: [HomeComponent, HomeHeaderComponent, SectionOneComponent, SectionTwoComponent, SectionTreeComponent, SectionFourComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

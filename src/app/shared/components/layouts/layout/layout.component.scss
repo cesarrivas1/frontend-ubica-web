@@ -1,0 +1,95 @@
+.path{
+    position: absolute;
+    top:0;
+    right: 0;
+    height: 618px;
+    z-index:-100;
+}
+
+.path-2{
+    position: absolute;
+    top: 544px;
+    left: 0;
+    z-index: -100;
+    width: 316px;
+}
+
+.path-3{
+    position: absolute;
+    top: 121px;
+    left: -26px;
+    z-index: -100;
+    width: 470px;
+}
+
+.path-4{
+    position: absolute;
+    top: 430px;
+    right: -232px;
+    z-index: -100;
+    width: 600px;
+}
+
+.path-5{
+    position: absolute;
+    top: 938px;
+    left: -177px;
+    z-index: -100;
+    width: 470px;
+}
+
+.path-6{
+    position: absolute;
+    top: 1242px;
+    right: -56px;
+    z-index: -100;
+    width: 517px;
+}
+
+.path-7{
+    position: absolute;
+    top: 1775px;
+    left: -177px;
+    z-index: -100;
+    width: 470px;
+}
+
+
+.path-8{
+    position: absolute;
+    top: 2297px;
+    z-index: -100;
+    width: 600px;
+}
+
+.path-9{
+    position: absolute;
+    top: 1927px;
+    z-index: -100;
+    right: -93px;
+    z-index: -100;
+    width: 777px;
+    height: 509px;
+}
+
+
+.path-10{
+    position: absolute;
+    top: 2531px;
+    z-index: -100;
+    width: 998px;
+    left: -26px;
+    width: 1544px;
+}
+
+
+.container{
+    width:100%;
+    max-width:1240px;
+}
+
+@media(max-width:991px){
+    .path{
+        height: auto;
+    }
+}
