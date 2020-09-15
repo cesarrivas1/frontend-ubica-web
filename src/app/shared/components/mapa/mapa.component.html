@@ -1,3 +1,29 @@
-<!-- <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map> -->
+  
+  <!-- <input 
+        ngx-google-places-autocomplete 
+        [options]="{
+          types: [],
+          componentRestrictions: { country: 'UA' }
+          }" 
+        #placesRef="ngx-places" 
+        (onAddressChange)="handleAddressChange($event)"
+  /> -->
+  
+  <agm-map 
+  [latitude]="lat" 
+  [longitude]="lng" 
+  [zoom]="zoom" 
+  [mapTypeId]="mapTypeId"
+  (click)="getCurrentPosition()"
+  >
+    <agm-marker 
+      [latitude]="lat" 
+      [longitude]="lng"
+      *ngIf="located"
+      >
+    </agm-marker>
+
+    <agm-info-window>
+      Mi posicion
+    </agm-info-window>
+  </agm-map>

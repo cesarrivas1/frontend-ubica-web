@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { AgmCoreModule } from '@agm/core';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,10 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     BrowserAnimationsModule,
     AuthModule,
     DashboardModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyB7Qa4w4Y44p9MTyDsbnG_U3BCZo4Z53lM'
-    // })
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB7Qa4w4Y44p9MTyDsbnG_U3BCZo4Z53lM'
+    }),
+    GooglePlaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

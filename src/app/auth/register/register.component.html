@@ -67,17 +67,36 @@
                             <label class="custom-control-label" for="customRadio2">F</label>
                         </div>
                     </div>
-
-                    <mat-form-field appearance="outline" class="full-width-input">
-                        <mat-label>Selecciona ubicacion</mat-label>
-                        <input type='email' matInput >
-                        <button class="button-icon" mat-icon-button matSuffix>
-                            <mat-icon matSuffix></mat-icon>
-                        </button>
-                    </mat-form-field>
+                        <input
+                            class="form-control"
+                            id="search-input" 
+                            ngx-google-places-autocomplete 
+                            [options]="options" 
+                            #placesRef="ngx-places" 
+                            (onAddressChange)="handleAddressChange($event)"
+                        />
                     <div class="form-group row my-1 mb-2">                        
-                        <div *ngIf="apiLoaded | async">
-                            <google-map width="310px" height="200px"></google-map>
+                        <div class="map-container">
+                            <!-- <google-map width="310px" height="200px"></google-map> -->
+                            <!-- <ab-mapa></ab-mapa> -->
+                            <agm-map
+                            class="mapa" 
+                            [latitude]="lat" 
+                            [longitude]="lng" 
+                            [zoom]="zoom" 
+                            [mapTypeId]="mapTypeId"
+                            >
+                              <agm-marker 
+                                [latitude]="lat" 
+                                [longitude]="lng"
+                                *ngIf="located"
+                                >
+                              </agm-marker>
+                          
+                              <agm-info-window>
+                                Mi posicion
+                              </agm-info-window>
+                            </agm-map>
                         </div>
                     </div>
 

@@ -4,6 +4,8 @@ import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { AgmCoreModule } from '@agm/core';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +21,8 @@ import { RegisterComponent } from './register/register.component';
     RecoveryPasswordComponent,
     FormEmailComponent,
     FormConfirmComponent, 
-    ResetPasswordComponent, RegisterComponent
+    ResetPasswordComponent, 
+    RegisterComponent
   ],
 
   imports: [
@@ -29,8 +32,12 @@ import { RegisterComponent } from './register/register.component';
     SharedModule,
     GoogleMapsModule,
     HttpClientModule,
-    HttpClientJsonpModule
-
+    HttpClientJsonpModule,
+    GooglePlaceModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB7Qa4w4Y44p9MTyDsbnG_U3BCZo4Z53lM',
+      libraries: ['places']
+    })
   ]
 })
 export class AuthModule { }
