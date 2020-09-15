@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     ImgUploadComponent,
     MapaComponent,
     LayoutComponent,
-    FooterComponent
+    FooterComponent,
+    ImageUploadComponent
 
   ],
   imports: [
