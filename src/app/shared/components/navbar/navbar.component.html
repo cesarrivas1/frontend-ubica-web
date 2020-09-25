@@ -1,28 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <img class="path" src="/assets/images/resources/grupo21.png">
+    <img class="path-1" src="/assets/images/resources/grupo22.png">
+
     <div class="container">
         <a class="navbar-brand" routerLink="/home">
-            <img class="images-logo" src="assets/images/resources/logo_naranga.png">
+            <img class="images-logo" src="/assets/images/resources/logo_naranga.png">
+            <img class="images-logo" src="/assets/images/resources/logo_naranga.png">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <img class="images-redes" src="assets/images/resources/facebook-2.png">
+                        <img class="images-redes" src="/assets/images/resources/grupo19.png">
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <img class="images-redes" src="assets/images/resources/instagram2.png">
-                    </a>
-                </li>
-                <li class="nav-item registrate">
-                    <a class="nav-link" routerLink="/register">
-                    Registrate
+                        <img class="images-redes" src="/assets/images/resources/grupo20.png">
                     </a>
                 </li>
                 <li class="nav-item inicio">
@@ -30,18 +28,76 @@
                     Inicia sesión
                     </a>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                        aria-expanded="false">Inicia Sesion</a>
-                    <div class="dropdown-menu dropdown-menu-right" style="">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li> -->
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <img class="path" src="/assets/images/resources/grupo21.png">
+    <img class="path-1" src="/assets/images/resources/grupo22.png">
+
+    <div class="container">
+
+    <a class="navbar-brand" href="#">
+        <img class="images-logo" src="/assets/images/resources/logo_naranga.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img class="images-redes" src="/assets/images/resources/grupo19.png">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img class="images-redes" src="/assets/images/resources/grupo20.png">
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"> Inicia sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav> -->
+
+
+  <nav>
+    <img class="path" src="/assets/images/grupo21.png">
+    <img class="path-1" src="/assets/images/grupo22.png">
+
+    <div class="container">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <fa-icon [icon]="faBars" ></fa-icon>
+        </label>
+        <a routerLink="/">
+            <a routerLink="/">
+                <img class="images-logo" id="images-logo" src="/assets/images/logo_naranga.png">
+            </a>
+        </a>
+        <ul>
+            <li class="link-sociales">
+                <a class="li-links">
+                    <img class="images-redes" src="/assets/images/grupo19.png">
+                </a>
+            </li>
+            <li class="link-sociales">
+                <a class="li-links">
+                    <img class="images-redes" src="/assets/images/grupo20.png">
+                </a>
+            </li>
+            <li>
+                <a routerLink="/login" class="li-links">
+                    <span class="icons">
+                        <fa-icon [icon]="faClipBoardList" ></fa-icon>
+                    </span> Inicia sesión
+                </a>
+            </li>
+        </ul>
+    </div>
+  </nav>

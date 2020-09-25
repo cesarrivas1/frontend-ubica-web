@@ -1,73 +1,120 @@
+.section-one{
+    margin:0px;
+    padding:0px;
+    height: auto;
 
-*{
-    font-family: 'Montserrat', sans-serif;
+    .carousel.slide{
+        margin-top:0px!important;
+    }
+
+    .card-container{
+        display:flex;
+        justify-content: space-between;
+        padding: 60px 160px;
+
+        .card{
+            border-top-right-radius: 55pt;
+            border-top-left-radius: 55pt;
+            border-bottom-right-radius: 25pt;
+            border-bottom-left-radius: 25pt;
+            box-shadow: 0px 3px 10px #00000033;
+            border-color:none;
+            width: 18rem!important;
+
+            .card-body {
+                -webkit-box-flex: 1;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                min-height: 1px;
+                padding: 1rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+
+        }
+    }
+
+    .button{
+        background:#fff!important;
+        color:#EA6926;
+        border: 1px solid #EA6926;
+        border-radius:4px;
+        height: 35px;
+        width: 140px;
+        border-radius: 3px;
+        opacity: 1;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size:0.8rem;
+        transition: 3ms all;
+    }
+
+    .button:hover{
+        color:#fff;
+        background-image:url(/assets/images/bg-button.png)!important;
+        cursor: pointer;
+    }
+
+    .path{
+        position:absolute;
+        left:0px;
+        height: 171px;
+    }
+
+    .path-1{
+        position: absolute;
+        right:0px;
+        height: 248px;
+    }
 }
 
-.section-one{
-    padding-bottom: 80px;
-    margin-top: 80px;
-    padding-right: 1%;
-    min-height: 575px;
+@media(max-width:1240px){
+    .card-container{
+        padding: 60px 120px!important;
+    }
+}
 
-    .section-row{
-        align-items: flex-start;
-        display: flex;
-        justify-content: space-between;
-    
-        .section-row__text {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            justify-content: flex-start;
-            margin-top: 80px;
+@media(max-width:1240px){
+    .card-container{
+        padding: 60px 90px!important;
+    }
+}
 
 
-            .title{
-                letter-spacing: 0px;
-                color: #EA6926;
-                text-transform: uppercase;
-                opacity: 1;
-                font-size: 3rem;
-                font-weight: bolder;
-                margin-top: 70px;
-            }
+@media(max-width:1064px){
+    .card-container{
+        padding: 60px 60px!important;
+    }
+}
 
-            .subtitle{  
-                font-size: 16px;
-                letter-spacing: 0px;
-                color: #000000;
-                opacity: 1;
-            }
 
-            .btn-ingresa{
-                border: 2px solid #EA6926;
-                border-radius: 8px;
-                opacity: 1;
-                color: #EA6926;
-                display: block;
-                width: 175px;
-                height: 44px;
-                line-height: 42px;
-                text-align: center;
-                font-size: 13px;
-                margin-top: 5px;
-                transition:3ms all;
-            }
+@media(max-width:1010px){
+    .card-container{
+        padding: 60px 40px!important;
+    }
+}
 
-            .btn-ingresa:hover{
-                border: 2px solid #EA6926;
-                background:#EA6926;
-                color:#fff;
-                cursor:pointer;
-                text-decoration:none;
-            }
+@media(max-width:991px){
+    .card-container{
+        flex-flow: column;
+        align-content: center;
+        align-items: center;
+        
+        .card{
+            width: 28rem!important;
+            margin-bottom:40px;
         }
-    
-        .section-row__img {
-            display: flex;
-            justify-content: center;
-            width: 50%;
-            z-index: 1;
+
+        .path-1{
+            height: 393px;
+            top: 667px;
         }
+
+    }
+
+    .card-container>.card{
+        width:28rem;
     }
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Modules
 import { AgmCoreModule } from '@agm/core';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Components
 import { NavDashboardComponent } from './components/navs/nav-dashboard/nav-dashboard.component';
@@ -43,7 +44,8 @@ import { ImageUploadComponent } from './components/image-upload/image-upload.com
     GooglePlaceModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    FontAwesomeModule
 
   ],
   exports: [
