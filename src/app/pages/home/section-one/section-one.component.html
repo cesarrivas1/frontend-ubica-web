@@ -2,23 +2,46 @@
     <div class="section-row container">
 
         <div class="section-row__text">
-            <p class="title">
-                descarga la app
-            </p>
-            <p class="subtitle">
-                <span class="line-1">Descarga de manera fácil y sencilla </span>
-                <span class="line-1">nuestra app para que puedas manejar todos</span>
-                <span class="line-1">tus afiliados y ver tus ingresos</span>
-            </p>
-            <div class="buttons_row">
-                <a href="#"><img class="download_app" src="assets/images/grupo7.png" alt="" /></a>
-                <a hrf="#"><img class="download_app" src="assets/images/grupo8.png" alt="" /></a>
+            <div class="text-section">
+                <p class="title">
+                    descarga la app
+                </p>
+                <p class="subtitle">
+                    Descarga de manera fácil y sencilla <br>
+                    nuestra app para que puedas manejar todos<br>
+                    tus afiliados y ver tus ingresos
+                    <!-- <span class="line-1">Descarga de manera fácil y sencilla </span>
+                    <span class="line-1">nuestra app para que puedas manejar todos</span>
+                    <span class="line-1">tus afiliados y ver tus ingresos</span> -->
+                </p>
+                <div class="buttons_row">
+                    <a href="#"><img class="download_app" src="assets/images/grupo7.png" alt="" /></a>
+                    <a hrf="#"><img class="download_app" src="assets/images/grupo8.png" alt="" /></a>
+                </div>
             </div>
         </div>
 
-        <div class="section-row__img">
-            <img src="/assets/images/resources/grupo6.png" alt="" />
+        <div class="section-row__text_orange">
+            <p class="title">
+                PREGUNTAS  FRECUENTES
+            </p>
+            <!--Accordion wrapper-->
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let question of itemsList">
+                  <mat-expansion-panel-header>
+                    <mat-panel-description>
+                      <span class="question">
+                       {{question.title}}
+                      </span>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <p class="question-parrafo">
+                    {{question.description}}
+                </p>
+                </mat-expansion-panel>
+                
+            </mat-accordion>
+            <!--/.Accordion wrapper-->
         </div>
-
     </div>
 </section>

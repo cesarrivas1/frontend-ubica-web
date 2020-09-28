@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import { BrowserModule } from '@angular/platform-browser';
+
 
 // Modules
 import { AgmCoreModule } from '@agm/core';
@@ -20,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+import { CollapseComponent } from './components/collapse/collapse.component';
 
 
 @NgModule({
@@ -32,8 +35,8 @@ import { ImageUploadComponent } from './components/image-upload/image-upload.com
     MapaComponent,
     LayoutComponent,
     FooterComponent,
-    ImageUploadComponent
-
+    ImageUploadComponent,
+    CollapseComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +48,7 @@ import { ImageUploadComponent } from './components/image-upload/image-upload.com
     HttpClientModule,
     HttpClientJsonpModule,
     GoogleMapsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
 
   ],
   exports: [
@@ -54,8 +57,9 @@ import { ImageUploadComponent } from './components/image-upload/image-upload.com
     SidebarSolicitudesComponent,
     MapaComponent,
     ImgUploadComponent,
-    LayoutComponent
+    LayoutComponent,
+    CollapseComponent
 
-  ]
+  ],
 })
 export class SharedModule { }

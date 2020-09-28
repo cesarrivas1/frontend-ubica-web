@@ -13,3 +13,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-position: right .7em top 50%, 0 0!important;
     background-size: .65em auto, 100%!important;
   }
+
+@media(max-width:1200px){
+  .container{
+    max-width: 1140px!important;
+  }
+}

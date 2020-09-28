@@ -8,7 +8,7 @@
     padding-bottom: 40px;
     padding-right: 1%;
     min-height: 575px;
-    background-image: url(/assets/images/bg-section-one.png);
+    background-image: url(/assets/images/grupo29.png);
     background-size: 100% 575px;
     background-repeat: no-repeat;
 
@@ -20,18 +20,18 @@
         .section-row__text {
             display: flex;
             flex-direction: column;
-            width: 50%;
             justify-content: flex-start;
-
+            width:60%;
 
             .title{
                 font-family: 'Montserrat';
-                font-size: 2.9rem;
-                font-weight: 600;
+                font-size: 1.8rem;
+                font-weight: bold;
                 text-align: left;
                 color: #fff;
                 text-transform: uppercase;
                 opacity: 1;
+                min-width: 405px;
             }
 
             .subtitle{ 
@@ -43,13 +43,14 @@
                 color: #fff;
                 margin-bottom:30px;
                 letter-spacing:0px;
+                min-width: 428px;
                 
                 .line-1, .line-2,.line-3{
                     display: block;
-                    margin-bottom: 5px;
+                    margin-bottom: -5px;
                     font-family: "Montserrat";
-                    font-size: 19px;
-                    letter-spacing:0px;
+                    font-size: 16px;
+                    letter-spacing: 0px;
                 }
             }
 
@@ -66,17 +67,198 @@
                 }
             }
         }
-    
-        .section-row__img {
+
+        .section-row__text_orange {
             display: flex;
-            justify-content: center;
-            width: 50%;
-            z-index: 1;
-           
-            img{
-                height:600px;
+            flex-direction: column;
+            justify-content: flex-start;
+            // width:40%;
+
+            .title{
+                font-family: 'Montserrat';
+                font-size: 1.8rem;
+                font-weight: bold;
+                text-align: left;
+                color: #EA6926;
+                text-transform: uppercase;
+                opacity: 1;
+                text-align: left;
             }
 
         }
+    
+    }
+}
+
+::ng-deep .mat-accordion{
+    box-shadow: none;
+    width:400px!important;
+}
+
+.mat-accordion .mat-expansion-panel:first-of-type {
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+}
+
+.mat-accordion .mat-expansion-panel:last-of-type {
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.question{
+    font-family: 'Montserrat';
+    color:#EA6926;
+    margin-left:10px;
+    font-size:14px;
+    letter-spacing:0px;
+    max-width: 400px;
+    font-weight: normal;
+}
+
+.question-parrafo{
+    font-family: 'Montserrat';
+    max-width: 400px;
+    max-width: 400px;
+    font-size: 13px;
+    color: gray;
+}
+
+
+@media(max-width:1140px){
+    .section-one{
+        background-image: url(/assets/images/bg-section-one.png);
+        background-size: 100% 575px;    
+    }
+}
+
+@media(max-width:991px){
+    .section-one{
+        background-size: 200%;    
+    }
+
+    .section-row{
+        flex-direction: column;
+
+        .section-row__text {
+            
+            width:100%!important;
+            margin-bottom:40px;
+
+            .text-section{
+                text-align: center;
+
+                .title{
+                    text-align: center;
+                }
+    
+                .subtitle{ 
+                    text-align: center;
+    
+                    .line-1, .line-2,.line-3{
+                        text-align: center;
+                    }
+                }
+
+                .buttons_row{
+                    justify-content: center;
+                }
+            }
+
+        }
+
+        .section-row__text_orange {
+            width:100%;
+            margin-bottom:40px;
+            color:#fff;
+
+            .title{
+                text-align: center!important;
+                color:#fff!important;
+                margin-top: 60px;
+            }
+
+            .mat-accordion {
+                margin: 0px auto;
+                margin-top:20px;
+            }
+        }
+    }
+   
+   
+}
+
+@media(max-width:656px){
+    .section-one{
+        background-image: url(/assets/images/bg-section-one.png);
+        background-size: 200% 92%;    
+    }
+}
+
+@media(max-width:434px){
+    
+    .mat-accordion
+    {
+        width:320px!important;
+    }
+
+    .question{
+        max-width: 320px !important;
+        margin-left: 0px;
+    }
+
+    .question-parrafo{
+        max-width: 320px !important;
+  
+    }
+
+    .section-one{
+        .section-row{
+            .section-row__text{
+                .text-section{
+                    display: flex;
+                    flex-flow: column wrap;
+                    width:100%px;
+    
+                    .title{
+                        min-width:auto!important;
+                    }
+                    .subtitle{ 
+                        max-width: 320px;
+                        display:contents!important;
+                        margin-bottom:40px;
+                    }
+
+                    .buttons_row{
+                        margin-top:40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .section-row__text_orange {
+        .title{
+            margin-top:0px!important;
+        }
+        .mat-accordion {
+            margin-top:0px;
+        }
+    }
+}
+
+@media(max-width:348px){
+    .mat-accordion
+    {
+        width:300px!important;
+    }
+
+    .question{
+        max-width: 300px !important;
+        margin-left: 0px;
+    }
+
+    .question-parrafo{
+        max-width: 300px !important;
+  
     }
 }
