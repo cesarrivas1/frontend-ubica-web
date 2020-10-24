@@ -1,1 +1,32 @@
-<p>afiliados works!</p>
+<div class="container-afiliados" *ngIf="!isLoading">
+    <table datatable class="table-borderless bg-danger my-5">
+        <thead class="text-white">
+          <tr>
+            <th>Nombre</th>
+            <th>ID del afiliado</th>
+            <th>Pais</th>
+            <th>Estado</th>
+            <th>Comercio</th>
+            <th>Servicio</th>
+            <th>Niveles</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Pago</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let afiliado of afiliados">
+            <td>{{afiliado.id}}</td>
+            <td>{{afiliado.name}}</td>
+            <td>{{afiliado.country}}</td>
+            <td>{{afiliado.state}}</td>
+            <td>Foo</td>
+            <td>Bar</td>
+            <td>1</td>
+            <td>Foo</td>
+            <td>10$</td>
+
+          </tr>
+        </tbody>
+      </table>
+</div>
+

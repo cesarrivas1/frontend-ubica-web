@@ -2,71 +2,203 @@
     <div class="container">
         <div class="login-form">
             <mat-card>
-                <mat-card-content>
-                    <h1><img src="/assets/images/logo_naranga.png"/></h1>
+                <mat-card-content [formGroup]="forma">
+                    <h1 routerLink="/home"><img src="/assets/images/logo_naranga.png"/></h1>
                     <h5 class="text-login">Registrate</h5>
+                
+                    <div class="form-group row-image">
+                        <img class="image-user" 
+                        [src]="url"
+                        *ngIf="url"
+                        >
+                        <img class="image-user" 
+                         src="assets/images/user_1.png"
+                         *ngIf="!url"
+                        >
+                    </div>
 
-                    <img class="image-user" src="/assets/images/user_1.png">
-                    <!-- <div class="form-group row my-1 mb-2">
-                        <img-upload></img-upload>
-                    </div> -->
+                    <div class="form-group btn-upload-container">
+                        <!-- <label for="exampleInputFile" 
+                        class="btn-file">
+                            <i class="fa fa-plus mr-1" aria-hidden="true"></i>
+                            Cargar Imagen
+                        </label>
+                         <input type="file" 
+                         (change)="fileEvent($event)" 
+                         accept="image/*"
+                        > -->
+                        <label for="exampleInputFile" class="btn-file">
+                            <i class="fa fa-plus mr-1" aria-hidden="true"></i>
+                            Cargar Imagen
+                        </label>
+                        <input type="file" 
+                              class="form-control-file" 
+                              id="exampleInputFile" 
+                              aria-describedby="fileHelp"
+                              (change)="fileEvent($event)" 
+                              accept="image/*">
+        
+                    </div>
+
+                    <!-- END Avatar -->
+
                     <mat-form-field appearance="outline" class="full-width-input">
                         <mat-label>Nombre</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput 
+                               formControlName="name"
+                               [class.is-invalid]="campoNoValido('name')" 
+                               placeholder="">
                     </mat-form-field>
+                    <mat-error *ngIf="onValidator('name', 'required')"
+                                class="text-danger text-left mt-0 ml-3">
+                                El campo nombre es obligatorio
+                    </mat-error>
+                    <mat-error *ngIf="onValidator('name', 'minLength')"
+                                class="text-danger text-left mt-0 ml-3">
+                                Ingrese un nombre valido
+                    </mat-error>
 
                     <mat-form-field appearance="outline" class="full-width-input">
                         <mat-label>Apellido</mat-label>
-                        <input type='text' matInput >
-                        <button class="button-icon" mat-icon-button matSuffix>
-                            <mat-icon matSuffix></mat-icon>
-                        </button>
+                        <input type='text'
+                               formControlName="surname"
+                               [class.is-invalid]="campoNoValido('surname')" 
+                               matInput >
                     </mat-form-field>
+                    <mat-error *ngIf="campoNoValido('surname')" 
+                                class="text-danger text-left mt-0 ml-3">
+                        Ingrese su(s) apellidos
+                    </mat-error>
 
-                    <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-form-field appearance="outline" 
+                                    class="full-width-input">
                         <mat-label>Email</mat-label>
-                        <input type='email' matInput >
-                        <button class="button-icon" mat-icon-button matSuffix>
-                            <mat-icon matSuffix></mat-icon>
-                        </button>
+                        <input type='email'
+                               formControlName="email"
+                               [class.is-invalid]="campoNoValido('email')"  
+                               matInput 
+                        >
                     </mat-form-field>
-
-                    <div class="form-group row my-1 mb-2">
-                        <div class="col-sm-4 ajust">
-                          <select class="select select-css-simple">
-                            <option>DD</option>
-                          </select>
-                        </div>
-                        <div class="col-sm-4 ajust">
-                            <select class="select select-css-simple">
-                              <option>MM</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-4 ajust">
-                            <select class="select select-css-simple">
-                              <option>YYYY</option>
-                            </select>
-                        </div>
-                    </div>
+                    <mat-error *ngIf="onValidator('email', 'required')" 
+                    class="text-danger text-left mt-0 ml-3">
+                        El campo email es obligatorio
+                    </mat-error>
+                    <mat-error *ngIf="onValidator('email', 'email')" 
+                                class="text-danger text-left mt-0 ml-3">
+                        Ingrese un email valido
+                    </mat-error>
 
                     <mat-form-field appearance="outline" class="full-width-input">
-                        <mat-label>Numero de Telefono</mat-label>
-                        <input type='email' matInput >
-                        <button class="button-icon" mat-icon-button matSuffix>
-                            <mat-icon matSuffix></mat-icon>
-                        </button>
+                        <mat-label>Descripcion</mat-label>
+                        <input matInput 
+                               formControlName="description"
+                               [class.is-invalid]="campoNoValido('description')" 
+                               placeholder="">
                     </mat-form-field>
+                    <mat-error *ngIf="onValidator('description', 'required')"
+                                class="text-danger text-left mt-0 ml-3">
+                                El campo descripcion es obligatorio
+                    </mat-error>
+
+                    <mat-form-field appearance="outline" 
+                                   class="full-width-input">
+                        <mat-label>Contraseña</mat-label>
+                        <input 
+                        [type]="hide ? 'password' : 'text'" 
+                        formControlName="password"
+                        [class.is-invalid]="campoNoValido('password')" 
+                        matInput 
+                        >
+                        <button class="button-icon" 
+                                mat-icon-button matSuffix 
+                                (click)="hide = !hide">
+                            <mat-icon matSuffix>
+                                {{ hide ? "visibility_off" : "visibility"}}
+                            </mat-icon>
+                        </button>                        
+                    </mat-form-field>
+                    <mat-error *ngIf="campoNoValido('password')" 
+                               class="text-danger text-left mt-0 ml-3">
+                        Requerido
+                    </mat-error>
+
+                    <mat-form-field appearance="outline" 
+                                    class="full-width-input">
+                        <mat-label>Confirmar nueva contraseña</mat-label>
+                        <input
+                        [type]="hide ? 'password' : 'text'"
+                        formControlName="password_confirmation"
+                        [class.is-invalid]="checarSiSonIguales()"   
+                        matInput 
+                        >
+                        <button class="button-icon" 
+                                mat-icon-button matSuffix 
+                                (click)="hide = !hide">
+                            <mat-icon matSuffix>
+                                {{ hide ? "visibility_off" : "visibility"}}
+                            </mat-icon>
+                        </button>                        
+                    </mat-form-field>
+                    <mat-error *ngIf="checarSiSonIguales()" 
+                                class="text-danger text-left mt-0 ml-3">
+                        Las contraseñas no coinciden
+                    </mat-error>
+
+                    <mat-form-field class="full-width-input" appearance="outline">
+                        <mat-label>Seleccione una fecha</mat-label>
+                        <input 
+                                formControlName="birth_date"
+                                matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width-input">
+
+                        <ngx-mat-intl-tel-input
+                            [preferredCountries]="['us', 'gb']"
+                            [enablePlaceholder]="true"
+                            [enableSearch]="true"
+                            name="phone"
+                            formControlName="phone"
+                            placeholder="Telefono" 
+                            #phone>
+                        </ngx-mat-intl-tel-input>
+                      <!-- <mat-hint>e.g. {{phone.selectedCountry.placeHolder}}</mat-hint>
+                      <mat-error *ngIf="f.form.controls['phone']?.errors?.required">Required Field</mat-error>
+                      <mat-error *ngIf="f.form.controls['phone']?.errors?.validatePhoneNumber">Invalid Number</mat-error> -->
+                    <!-- <mat-error *ngIf="campoNoValido('phone')" class="text-danger text-left mt-0 ml-3">
+                        Ingrese un numero telefonico válido
+                    </mat-error> -->
+                    </mat-form-field>
+
 
                     <div class="form-control-genero">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
-                            <label class="custom-control-label" for="customRadio1">M</label>
+                            <input type="radio" 
+                                  id="customRadio1" 
+                                  value="M" 
+                                  class="custom-control-input"
+                                  formControlName="gender" 
+                                  checked="">
+                            <label class="custom-control-label" 
+                                   for="customRadio1">M
+                            </label>
                         </div>
+
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">F</label>
+                            <input type="radio" 
+                                   id="customRadio2" 
+                                   value="F" 
+                                   formControlName="gender" 
+                                   class="custom-control-input">
+                            <label class="custom-control-label" 
+                                   for="customRadio2">F
+                            </label>
                         </div>
                     </div>
+                    
+                    <div>
                         <input
                             class="form-control"
                             id="search-input" 
@@ -75,15 +207,18 @@
                             #placesRef="ngx-places" 
                             (onAddressChange)="handleAddressChange($event)"
                         />
+                    </div>
+
                     <div class="form-group row my-1 mb-2">                        
-                        <div class="map-container">
+                        <div class="map-container"
+                            *ngIf="mapVisible">
                             <!-- <google-map width="310px" height="200px"></google-map> -->
                             <!-- <ab-mapa></ab-mapa> -->
                             <agm-map
                             class="mapa" 
                             [latitude]="lat" 
-                            [longitude]="lng" 
-                            [zoom]="zoom" 
+                            [longitude]="lng"
+                            [zoom]="15" 
                             [mapTypeId]="mapTypeId"
                             >
                               <agm-marker 
@@ -100,10 +235,28 @@
                         </div>
                     </div>
 
-                    <button class="button" routerLink="/dashboard/home" mat-raised-button>ENVIAR</button>
+                    <button class="button"
+                            type="button" 
+                            *ngIf="!isLoading"
+                            [disabled]="forma.invalid"
+                            mat-raised-button
+                            (click)="save()">
+                            ENVIAR
+                    </button>
+
+                    <button class="button"
+                            *ngIf="isLoading" 
+                            disabled>
+                            <i class="fa fa-spinner fa-spin fa-fw"></i>
+                            Espere...
+                    </button>
+                    <br><br>
                 </mat-card-content>
             </mat-card>
         </div>
     </div>
 </div>
-
+<!-- 
+<pre>
+    {{this.forma.valid}}
+</pre> -->

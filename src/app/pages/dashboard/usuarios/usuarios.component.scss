@@ -1,0 +1,80 @@
+
+*{
+    margin:0px;
+    padding:0px;
+}
+.container-solicitudes{
+    width:100%;
+    display:grid;
+    grid-gap:1.6rem;
+    padding-left:0px;
+    padding-right: 0px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px  60px 1fr;
+    grid-template-areas: "notifications  notifications notifications notifications"
+                         "newUser        newUser       newUser       newUser"
+                         "tableAfi       tableAfi      tableAfi      tableAfi";
+    // height:100vh;
+    background-attachment: scroll;
+}
+
+.container-solicitudes .cont-notifications{
+    grid-area: notifications;
+    height: 60px;
+    max-height: 60px;
+    margin-bottom:0.2rem;
+    margin-top:0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 15px 5px 0px;
+}
+
+.container-solicitudes .cont-new{
+    grid-area: newUser;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-solicitudes .cont-table{
+    grid-area: tableAfi;
+}
+
+
+.new-solicitud-txt{
+    font-size:0.9rem;
+    color:#EA6926;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom:5px;
+}
+
+.select-text{
+    font-size:0.8rem;
+    color:#000;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.button{
+    background:#EA6926!important;
+    color:#fff;
+    border-radius:0px;
+    height: 35px;
+    background: #EA6926 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    letter-spacing: 1px;
+    font-size:0.8rem;
+    margin-top: 1.5rem;
+    transition: 3ms all;
+    padding: 9px 12px;
+}
+
+.button:hover{
+    background:#fff!important;
+    color:#EA6926;
+    border:1px solid #EA6926;
+    cursor: pointer;
+}

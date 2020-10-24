@@ -1,0 +1,220 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin:0px;
+    padding:0px;
+}
+
+.mat-icon, .mat-button-wrapper{
+    font-family: 'Material Icons'!important;
+    color:#EA6926!important;
+    background-color: transparent!important;
+  }
+
+  ::ng-deep.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+    display: block;
+    font-size: inherit;
+    width: 2.5em;
+    height: 2.5em;
+    color: #EA6926!important;
+}
+
+
+.container-newUser{
+    box-sizing: content-box;
+    background: #fff;
+    // background-image: url(/assets/images/bg-2-registro.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+    mat-card{
+        max-width:400px;
+        margin:2rem auto;
+        text-align: center;
+        min-height: 390px;
+        padding:20px;
+        box-shadow: 0px 3px 10px #00000033;
+    }
+
+    .full-width-input, button{
+        width: 90%;
+        border:none;
+        padding-bottom:0px!important;
+        margin-bottom:0px;
+
+    }
+
+    .button{
+        background:#EA6926!important;
+        color:#fff;
+        border-radius:4px;
+        height: 35px;
+        background: #EA6926 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        opacity: 1;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size:0.8rem;
+        margin-top: 1.5rem;    
+    }
+
+    .form-control{
+        border: 1px solid #BEBDBD;
+        width: 90%;
+        margin-left: 15px;
+        margin-top: 10px;
+        transition:3ms all;
+        font-size: 13px!important;
+        font-family: 'Montserrat', sans-serif!important;
+        height: 40px;
+
+
+        ::-webkit-input-placeholder { /* Edge */
+            font-size: 13px!important;
+            font-family: 'Montserrat', sans-serif!important;
+
+          }
+          
+          :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            font-size: 13px!important;
+            font-family: 'Montserrat', sans-serif!important;
+
+          }
+          
+          ::placeholder {
+            font-size: 13px!important;
+            font-family: 'Montserrat', sans-serif!important;
+
+          }
+    }
+
+    mat-label{
+        font-size:12px;
+        letter-spacing:0px;
+    }
+
+
+   ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0.5em 0 0.5em 0;
+    }
+
+    ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0.344em;
+        
+    }
+
+    ::ng-deep.mat-form-field-label-wrapper {
+        top: -1.4em;
+    }
+
+    .sufix{
+        margin: -0.875px 0px 0px!important;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-label {
+        // top: 1.85em;
+        top:  2.33541521em;
+        margin-top: 0em;
+    }
+
+    ::ng-deep.mat-input-element {
+        caret-color: #EA6926;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-start {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-color: #BEBDBD;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-start {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-color: #BEBDBD;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-gap{
+        border-color: #BEBDBD;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-end{
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-color: #BEBDBD;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+        color:#BEBDBD;
+    }
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start, 
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end{
+        border-color:#EA6926!important;
+    }
+
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap:hover{
+        border-color:#EA6926!important;
+    }
+
+
+    ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap{
+        border-bottom-color:#EA6926!important;
+    }
+
+    ::ng-deep.ng-star-inserted{
+        font-size: 11px!important;
+    }
+
+    .login-form[_ngcontent-pnk-c86] .mat-form-field-appearance-outline .mat-form-field-outline-gap {
+        border-color: #BEBDBD;
+    }
+
+    .form-control:hover{
+        border: 2px solid #EA6926;
+    }
+
+    .btn-upload-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input[type="file"]{
+        display:none;
+    }
+
+    .btn-file{
+        height: 30px;
+        width: 106px;
+        color: #EA6926;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:1px solid #EA6926;
+        background: #fff 0% 0% no-repeat padding-box;
+        border-radius: 7px;
+        opacity: 1;
+        font-size: 11px;
+        // font-weight: 600;
+        font-family: 'Montserrat';
+        transition: 3ms all;
+    }
+    
+    .btn-file:hover{
+        background: #FF9900 0% 0% no-repeat padding-box;
+        color:#fff;
+        cursor: pointer;
+    }
+    
+    mat-label{
+        font-size:12px;
+        letter-spacing:0px;
+    }
+
+
+    
+
+
+}

@@ -1,0 +1,89 @@
+<div class="container-newUser">
+    <mat-card>
+        <mat-card-content [formGroup]="forma">
+        
+            <div class="form-group row-image">
+                <img class="image-user" 
+                [src]="url"
+                *ngIf="url"
+                >
+                <img class="image-user" 
+                 src="assets/images/user_1.png"
+                 *ngIf="!url"
+                >
+            </div>
+
+            <div class="form-group btn-upload-container">
+                <label for="exampleInputFile" class="btn-file">
+                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
+                    Cargar Imagen
+                </label>
+                <input type="file" 
+                      class="form-control-file" 
+                      id="exampleInputFile" 
+                      aria-describedby="fileHelp"
+                      (change)="fileEvent($event)" 
+                      accept="image/*">
+            </div>
+
+            <!-- END Avatar -->
+
+            <mat-form-field appearance="outline" class="full-width-input">
+                <mat-label>Nombre</mat-label>
+                <input matInput 
+                       formControlName="name"
+                       [class.is-invalid]="campoNoValido('name')" 
+                       placeholder="">
+            </mat-form-field>
+            <mat-error *ngIf="onValidator('name', 'required')"
+                        class="text-danger text-left mt-0 ml-3">
+                        El campo nombre es obligatorio
+            </mat-error>
+            <mat-error *ngIf="onValidator('name', 'minLength')"
+                        class="text-danger text-left mt-0 ml-3">
+                        Ingrese un nombre valido
+            </mat-error>
+
+
+            <mat-form-field appearance="outline" 
+                           class="full-width-input">
+                <mat-label>Contraseña</mat-label>
+                <input 
+                [type]="hide ? 'password' : 'text'" 
+                formControlName="password"
+                [class.is-invalid]="campoNoValido('password')" 
+                matInput 
+                >
+                <button class="button-icon" 
+                        mat-icon-button matSuffix 
+                        (click)="hide = !hide">
+                    <mat-icon matSuffix>
+                        {{ hide ? "visibility_off" : "visibility"}}
+                    </mat-icon>
+                </button>                        
+            </mat-form-field>
+            <mat-error *ngIf="campoNoValido('password')" 
+                       class="text-danger text-left mt-0 ml-3">
+                Requerido
+            </mat-error>
+
+    
+            <button class="button"
+                    type="button" 
+                    *ngIf="!isLoading"
+                    [disabled]="forma.invalid"
+                    mat-raised-button
+                    (click)="save()">
+                    ENVIAR
+            </button>
+
+            <button class="button"
+                    *ngIf="isLoading" 
+                    disabled>
+                    <i class="fa fa-spinner fa-spin fa-fw"></i>
+                    Espere...
+            </button>
+            <br><br>
+        </mat-card-content>
+    </mat-card>
+</div>

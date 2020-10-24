@@ -1,26 +1,68 @@
-<section class="form-container">
+<section class="form-container" *ngIf="!isLoading && aplicant.length>0">
     <div class="section-image">
         <div class="container_image">
-            <img class="image_profile" src="/assets/images/user_profile.png">
-            <p class="name_subscritor">Cesar Rivas</p>
-            <p class="num_subscriptor">ID de afiliado <span class="id_subscriptor">VE000000</span></p>
-            <button class="btn-accept">ACEPTAR</button>
-            <button class="btn-delete">ELIMINAR</button>
+            <img class="image_profile" src="assets/images/user_1.png" *ngIf="aplicant[0].avatar == null">
+            <img class="image_profile" [src]="aplicant[0].avatar" *ngIf="aplicant[0].avatar!= null">
+            <p class="name_subscritor">{{aplicant[0].name}} {{aplicant[0].surname}}</p>
+            <p class="num_subscriptor">ID de afiliado <span class="id_subscriptor">{{aplicant[0].affiliate_code}}</span></p>
+            <button class="btn-accept"
+                    *ngIf="!isLoading"
+                    (click)="manageRequest(aplicant[0].id)">
+                ACEPTAR
+            </button>
+            <button class="btn-accept" 
+                    *ngIf="isLoading" 
+                    disabled>
+                    <i class="fa fa-spinner fa-spin fa-fw"></i>
+                    Espere...            
+            </button>
+            <button class="btn-delete"
+                    (click)="deleteRequest(aplicant[0].id)" 
+                    *ngIf="!isLoading">
+                ELIMINAR
+            </button>
+            <button class="btn-accept" 
+                    *ngIf="isLoading" 
+                    disabled>
+                    <i class="fa fa-spinner fa-spin fa-fw"></i>
+                    Espere...            
+            </button>
         </div>
     </div>
     <div class="section-inputs">
         <form class="form_information">
             <div class="form-group">
               <label class="title-1">Datos personales</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="telefono">
-                
+                <!-- <input type="text" 
+                        class="form-control" 
+                        [value]="aplicant[0].phone" 
+                        placeholder="telefono"
+                        disabled
+                > -->
+                <!-- <ngx-mat-intl-tel-input
+                    [preferredCountries]="['us', 'gb']"
+                    [enablePlaceholder]="true"
+                    name="phone"
+                    value="aplicant[0].phone"
+                    formControlName="phone"
+                    disabled 
+                    #phone>
+                </ngx-mat-intl-tel-input> -->
                 <div class="form-control-genero">
                     <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+                        <input type="radio" 
+                        id="customRadio1" 
+                        name="customRadio" 
+                        class="custom-control-input" 
+                        [checked]="aplicant[0].gender=='M'">
                         <label class="custom-control-label" for="customRadio1">M</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <input type="radio" 
+                               id="customRadio2" 
+                               name="customRadio"
+                               [checked]="aplicant[0].gender=='F'" 
+                               class="custom-control-input">
                         <label class="custom-control-label" for="customRadio2">F</label>
                     </div>
                 </div>
@@ -28,47 +70,171 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="telefono">
+                <input type="text" 
+                      class="form-control"
+                      placeholder="telefono"
+                      [value]="aplicant[0].phone"
+                      disabled>
+                <!-- <ngx-mat-intl-tel-input
+                    [preferredCountries]="['us', 'gb']"
+                    [enablePlaceholder]="true"
+                    value="aplicant[0].phone"
+                    disabled 
+                    #phone>
+                </ngx-mat-intl-tel-input> -->
             </div>
 
             <div class="form-group">
                 <label class="title-1">Direccion</label>
-                <select class="form-control select-css-simple">
-                    <option>Venezuela</option>
-                </select>            
+                <input type="text" 
+                      class="form-control"
+                      placeholder="Pais"
+                      [value]="aplicant[0].country"
+                      disabled>            
             </div>
 
             <div class="form-group">
-                <select class="form-control select-css-simple">
-                    <option>Bolivar</option>
-                </select>            
+                <input type="text" 
+                      class="form-control"
+                      placeholder="Estado"
+                      [value]="aplicant[0].state"
+                      disabled>              
             </div>
 
             <div class="form-group">
-                <select class="form-control select-css-simple">
-                    <option>Ciudad Guayana</option>
-                </select>            
+                <input type="text" 
+                    class="form-control"
+                    placeholder="Ciudad"
+                    [value]="aplicant[0].country"
+                    disabled>  
             </div>
 
             <div class="form-group">
-                <select class="form-control select-css-simple">
-                    <option>Caroni</option>
-                </select>            
+                <input type="text" 
+                    class="form-control"
+                    placeholder="direccion"
+                    [value]="aplicant[0].address"
+                    disabled>            
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <input type="text" class="form-control" placeholder="Av o Calle">
-            </div>
+            </div> -->
 
             <div class="form-group">
-                <label for="exampleFormControlSelect2">Seleccione afiliación</label>
-                <select multiple class="form-control">
-                  <option>Seleccione afiliacion</option>
-                  <option>Comercio</option>
-                  <option>Servicio</option>
-                  <option>Emprendedor</option>
+                <label class="title-1">
+                       Seleccione afiliación
+                </label>
+                <select class="form-control"
+                        name="affiliate_type_id"
+                        (change)="interaccionBtn(affiliate_type_id)"
+                        [(ngModel)]="affiliate_type_id">
+                    <option value="">Seleccione un tipo...</option>
+                    <option  *ngFor="let type of typeAfiliation"
+                             [value]="type.id" >
+                      {{type.name}}
+                    </option>
                 </select>
             </div>
+
+            <div class="form-group" *ngIf="selectBussines">
+                <label class="title-1">
+                       Selecciona comercio(s)
+                </label>
+                <ng-multiselect-dropdown
+                name="bussineSelected"
+                [placeholder]="'seleccione...'"
+                [(ngModel)]="bussineSelected"
+                [settings]="dropdownSettings"
+                [data]="bussines"
+                (onDeSelect)="removeItemFromArr(bussinesRequest, $event)"
+                (onSelect)="onItemSelectBussines($event)"
+                >
+                </ng-multiselect-dropdown>
+
+            </div>
+
+            <div class="form-group" *ngIf="selectServices">
+                <label class="title-1">
+                       Agregar servicio(s)
+                </label>
+                <ng-multiselect-dropdown
+                name="servicesSelected"
+                [placeholder]="'seleccione...'"
+                [(ngModel)]="servicesSelected"
+                [settings]="dropdownSettings"
+                [data]="services"
+                (onDeSelect)="removeItemFromArr(servicesRequest, $event)"
+                (onSelect)="onItemSelectServices($event)"
+                >
+                </ng-multiselect-dropdown>
+            </div>
+
+            <div class="form-group" *ngIf="selectEntrepreneurs">
+                <label class="title-1">
+                       Seleccione un servicio emprendedor
+                </label>
+                <ng-multiselect-dropdown
+                name="entrepreneursSelected"
+                [placeholder]="'seleccione...'"
+                [(ngModel)]="entrepreneursSelected"
+                [settings]="dropdownSettings"
+                [data]="entrepreneurs"
+                (onDeSelect)="removeItemFromArr(entrepreneursRequest, $event)"
+                (onSelect)="onItemSelectEntrepreneurs($event)"
+                >
+                </ng-multiselect-dropdown>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4 mr-0">
+                  <input type="text" 
+                         class="form-control"
+                         name="folio_number"
+                         [(ngModel)]="folio_number">                       
+                </div>
+                <div class="form-group ml-0">
+                    <div class="custom-control custom-checkbox referenced">
+                        <input type="checkbox" 
+                                class="custom-control-input" 
+                                id="customCheck1" 
+                                [checked]="folio_number">
+                        <label class="custom-control-label" 
+                                for="customCheck1">
+                                Referencia
+                        </label>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-5 mr-0">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+                        <label class="custom-control-label" for="customCheck1">Pago recibido</label>
+                    </div>
+                </div>
+                <div class="form-group ml-0">
+                    <span class="amount">10 USD</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputFile" class="btn-file">Identificacion oficial</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputFile" class="btn-file">Antecedentes penales (PDF)</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputFile" class="btn-file">Comercio Registro Mercantil</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            </div>
+
         </form>
     </div>
     <div class="section-free"></div>

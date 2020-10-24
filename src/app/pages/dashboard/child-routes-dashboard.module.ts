@@ -6,6 +6,7 @@ import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { AfiliadosComponent } from './afiliados/afiliados.component';
+import { NewUsersComponent } from './new-users/new-users.component';
 
 
 const childRoutes: Routes = [
@@ -24,6 +25,10 @@ const childRoutes: Routes = [
   {
     path: 'afiliados',
     component: AfiliadosComponent
+  },
+  {
+    path: 'nuevoUsuario',
+    component: NewUsersComponent
   }
 ];
 
